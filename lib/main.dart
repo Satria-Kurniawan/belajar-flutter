@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
+
+import 'contentProfil.dart';
+import 'headerProfil.dart';
 
 void main() {
   runApp(new MyApp());
@@ -15,9 +16,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.purple,
           leading: Icon(Icons.menu),
           title: Text("Satria First App"),
-          // ignore: prefer_const_literals_to_create_immutables
-          actions: [
-            // ignore: prefer_const_constructors
+          actions: const [
             Icon(
               Icons.thumb_up_alt,
               color: Colors.blue,
@@ -27,17 +26,20 @@ class MyApp extends StatelessWidget {
             Padding(padding: EdgeInsets.symmetric(horizontal: 8)),
           ],
         ),
-        body: Container(
-          padding: EdgeInsets.symmetric(vertical: 8),
-          child: Center(
+        body: Center(
+          child: Container(
+            margin: EdgeInsets.all(5),
+            width: double.infinity,
+            color: Color.fromARGB(255, 240, 240, 240),
             child: Column(
-              children: <Widget>[
-                Image.asset('images/Satria_2.jpg', width: 350),
-                Padding(padding: EdgeInsets.symmetric(vertical: 8)),
-                Text(
-                  "Kadek Satria Kurniawan",
-                  style: TextStyle(color: Colors.purple, fontSize: 20),
-                )
+              children: [
+                containerProfil(),
+                Padding(padding: EdgeInsets.only(bottom: 10)),
+                Text('Kadek Satria Kurniawan'),
+                Text('http://new-bali-island.000webhostapp.com/'),
+                Padding(padding: EdgeInsets.only(bottom: 20)),
+                rowProfil1(),
+                rowProfil2(),
               ],
             ),
           ),
